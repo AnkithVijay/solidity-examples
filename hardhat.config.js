@@ -37,7 +37,7 @@ function getMnemonic(networkName) {
 }
 
 function accounts(chainKey) {
-  return { mnemonic: getMnemonic(chainKey) }
+  return [process.env.PVT_KEY]
 }
 
 // You need to export an object to set up your config
@@ -78,8 +78,6 @@ module.exports = {
         }
       }
     ]
-
-
   },
 
   // solidity: "0.8.4",
@@ -141,7 +139,7 @@ module.exports = {
     },
 
     goerli: {
-      url: "https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161", // public infura endpoint
+      url: "https://eth-goerli.g.alchemy.com/v2/LMB8nsbPm1QrPpN-JnpRa4JxyykG9xJc", // public infura endpoint
       chainId: 5,
       accounts: accounts(),
     },
@@ -166,7 +164,7 @@ module.exports = {
       accounts: accounts(),
     },
     'optimism-goerli': {
-      url: `https://goerli.optimism.io/`,
+      url: `https://opt-goerli.g.alchemy.com/v2/oFETu4DoCQYzJvb9FQrd4IZU3lagfuEQ`,
       chainId: 420,
       accounts: accounts(),
     },
